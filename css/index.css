@@ -1,0 +1,177 @@
+body {
+    background-color: #f5f5f5;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.container {
+    background-color: #fff;
+}
+/* 根据设计稿修改container的最大宽度为1280px */
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+/* header */
+.header {
+    padding-left: 0;
+}
+.logo {
+    background-color: #429ad9;
+}
+.logo a img {
+    display: block;
+    margin: 0 auto;
+    /* width: 100%; */
+    /* width: 100%是将所有指定元素的宽度 拉伸或收缩到和父元素的宽度一致，而max-width: 100%则是如果指定元素的宽度不超过父元素的宽度，则大小不变，如果超过了父元素的宽度，则将宽度收缩为父元素的宽度。 */
+    max-width: 100%;
+}
+/* 1.如果进入超小屏幕,logo里的图片隐藏 */
+/* 2.提前准备一个盒子 平时隐藏 只有在超小屏幕才显示 */
+.logo a span {
+    display: block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.nav {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+/* 进入小屏幕/超小屏幕 li添加浮动并且宽度为20% */
+@media screen and (max-width: 991px) {
+    .nav ul li {
+        float: left;
+        width: 20%;
+    }
+    article {
+        margin-top: 10px;
+    }
+}
+
+.nav ul li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+
+.nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+}
+.nav ul li a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+/* header End*/
+/* 进入超小屏幕文字会变小 */
+@media screen and (max-width: 767px) {
+    .nav ul li a {
+        font-size: 14px;
+        padding-left: 3px;
+    }
+    /* 当处于超小屏幕 第一li占100% 剩下的各占50% */
+    .news ul li:nth-child(1) {
+        width: 100%!important;
+    }
+    .news ul li {
+        width: 50%!important;
+    }
+    .publish h3 {
+        font-size: 14px;
+    }
+}
+/* article */
+/* 当处于超小屏幕 第一li占100% 剩下的各占50% */
+.news ul li {
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.news ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+.news ul li a img {
+    width: 100%;
+    height: 100%;
+}
+.news ul li a p {
+    position: absolute;
+    width: 100%;
+    height: 41px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 5px 10px;
+}
+.news ul li:nth-child(1) {
+    width: 50%;
+    height: 266px;
+    /* background-color: aqua; */
+}
+.news ul li:nth-child(1) a p {
+    line-height: 41px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.publish {
+    border-top: 1px solid #ccc;
+}
+.publish .row {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.pic {
+    margin-top: 10px;
+}
+.pic img {
+    width: 100%;
+    height: 100%;
+}
+/* article End*/
+
+/* aside  */
+.banner img{
+    width: 100%;
+}
+.hot {
+    display: block;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    padding: 0 20px 20px;
+}
+.hot span {
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+.hot p {
+    font-size: 12px;
+}
+/* aside  End*/
